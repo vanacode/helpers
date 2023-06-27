@@ -1,5 +1,5 @@
 {
-    "name": "vanacode/vn-helpers",
+    "name": "vanacode/helpers",
     "description": "helper methods for laravel",
     "keywords": ["laravel", "helpers", "vanacode"],
     "license": "MIT",
