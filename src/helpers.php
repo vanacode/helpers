@@ -4,14 +4,14 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-if (!function_exists('vana_dd_if')) {
+if (!function_exists('vn_dd_if')) {
     /**
      * Dump the passed variables and end the script based last condition argument.
      *
      * @param mixed
      * @return void
      */
-    function vana_dd_if(...$args)
+    function vn_dd_if(...$args)
     {
         $condition = array_pop($args);
         if ($condition) {
@@ -20,14 +20,14 @@ if (!function_exists('vana_dd_if')) {
     }
 }
 
-if (!function_exists('vana_if_dd')) {
+if (!function_exists('vn_if_dd')) {
     /**
      * Dump the passed variables and end the script based first condition argument.
      *
      * @param mixed
      * @return void
      */
-    function vana_if_dd(...$args)
+    function vn_if_dd(...$args)
     {
         $condition = array_shift($args);
         if ($condition) {
@@ -36,26 +36,26 @@ if (!function_exists('vana_if_dd')) {
     }
 }
 
-if (!function_exists('vana_dd_json')) {
+if (!function_exists('vn_dd_json')) {
     /**
      * Dump the passed variables and end the script.
      *
      * @param mixed
      * @return void
      */
-    function vana_dd_json(...$args)
+    function vn_dd_json(...$args)
     {
         dd(...$args);
     }
 }
 
-if (!function_exists('vana_dd_pluck')) {
+if (!function_exists('vn_dd_pluck')) {
     /**
      * @param Collection|array $collection
      * @param string $key
      * @param bool $toArray
      */
-    function vana_dd_pluck(Collection|array $collection, string $key, bool $toArray = true)
+    function vn_dd_pluck(Collection|array $collection, string $key, bool $toArray = true)
     {
         if (is_array($collection)) {
             $collection = collect($collection);
@@ -66,11 +66,11 @@ if (!function_exists('vana_dd_pluck')) {
     }
 }
 
-if (!function_exists('vana_dd_prev')) {
+if (!function_exists('vn_dd_prev')) {
     /**
      *
      */
-    function vana_dd_prev()
+    function vn_dd_prev()
     {
         $info = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 2)[1];
         $object = $info['object'];
@@ -80,24 +80,24 @@ if (!function_exists('vana_dd_prev')) {
     }
 }
 
-if (!function_exists('vana_dd_keys')) {
+if (!function_exists('vn_dd_keys')) {
     /**
      * @param array $data
      */
-    function vana_dd_keys(array $data)
+    function vn_dd_keys(array $data)
     {
         dd(array_keys($data));
     }
 }
 
-if (!function_exists('vana_if_dump')) {
+if (!function_exists('vn_if_dump')) {
     /**
      * Dump the passed variables and end the script based first condition argument.
      *
      * @param mixed
      * @return void
      */
-    function vana_if_dump(...$args)
+    function vn_if_dump(...$args)
     {
         $condition = array_shift($args);
         if ($condition) {
@@ -106,14 +106,14 @@ if (!function_exists('vana_if_dump')) {
     }
 }
 
-if (!function_exists('vana_dump_if')) {
+if (!function_exists('vn_dump_if')) {
     /**
      * Dump the passed variables and end the script based last condition argument.
      *
      * @param mixed
      * @return void
      */
-    function vana_dump_if(...$args)
+    function vn_dump_if(...$args)
     {
         $condition = array_pop($args);
         if ($condition) {
@@ -122,21 +122,21 @@ if (!function_exists('vana_dump_if')) {
     }
 }
 
-if (!function_exists('vana_show_bcrypt')) {
+if (!function_exists('vn_show_bcrypt')) {
     /**
      * @param string $password
      */
-    function vana_show_bcrypt(string $password)
+    function vn_show_bcrypt(string $password)
     {
         dd(bcrypt($password));
     }
 }
 
-if (!function_exists('vana_show_class_methods')) {
+if (!function_exists('vn_show_class_methods')) {
     /**
      * @param object|string $class
      */
-    function vana_show_class_methods(object|string $class)
+    function vn_show_class_methods(object|string $class)
     {
         $methods = get_class_methods($class);
         sort($methods);
@@ -144,21 +144,21 @@ if (!function_exists('vana_show_class_methods')) {
     }
 }
 
-if (!function_exists('vana_show_class')) {
+if (!function_exists('vn_show_class')) {
     /**
      * @param object $object
      */
-    function vana_show_class(object $object)
+    function vn_show_class(object $object)
     {
         dd(get_class($object));
     }
 }
 
-if (!function_exists('vana_show_query')) {
+if (!function_exists('vn_show_query')) {
     /**
      * @param bool $isDie
      */
-    function vana_show_query(bool $isDie = false)
+    function vn_show_query(bool $isDie = false)
     {
         $data = DB::getQueryLog();
         foreach ($data as $datum) {
@@ -177,21 +177,21 @@ if (!function_exists('vana_show_query')) {
     }
 }
 
-if (!function_exists('vana_show_object_methods')) {
+if (!function_exists('vn_show_object_methods')) {
     /**
      * @param object|string $object
      */
-    function vana_show_object_methods(object|string $object)
+    function vn_show_object_methods(object|string $object)
     {
-        vana_show_class_methods($object);
+        vn_show_class_methods($object);
     }
 }
 
-if (!function_exists('vana_show_object_vars')) {
+if (!function_exists('vn_show_object_vars')) {
     /**
      * @param object $obj
      */
-    function vana_show_object_vars(object $obj)
+    function vn_show_object_vars(object $obj)
     {
         $vars = get_object_vars($obj);
         ksort($vars);
@@ -199,24 +199,24 @@ if (!function_exists('vana_show_object_vars')) {
     }
 }
 
-if (!function_exists('vana_show_object_nested_vars')) {
+if (!function_exists('vn_show_object_nested_vars')) {
     /**
      * @param object $obj
      * @param bool $isDoted
      */
-    function vana_show_object_nested_vars(object $obj, bool $isDoted = true)
+    function vn_show_object_nested_vars(object $obj, bool $isDoted = true)
     {
-        $vars = vana_get_object_vars_recursive($obj, $isDoted);
+        $vars = vn_get_object_vars_recursive($obj, $isDoted);
         dd($vars);
     }
 }
 
-if (!function_exists('vana_show_object_vars_methods')) {
+if (!function_exists('vn_show_object_vars_methods')) {
     /**
      * @param object $object
      * @param bool $showObj
      */
-    function vana_show_object_vars_methods(object $object, bool $showObj = false)
+    function vn_show_object_vars_methods(object $object, bool $showObj = false)
     {
         $vars = get_object_vars($object);
         ksort($vars);
@@ -234,31 +234,31 @@ if (!function_exists('vana_show_object_vars_methods')) {
     }
 }
 
-if (!function_exists('vana_get_object_vars_recursive')) {
+if (!function_exists('vn_get_object_vars_recursive')) {
     /**
      * @param object $object
      * @param bool $isDoted
      * @return array
      */
-    function vana_get_object_vars_recursive(object $object, bool $isDoted = true)
+    function vn_get_object_vars_recursive(object $object, bool $isDoted = true)
     {
-        $result = vana__get_object_vars_recursive($object);
+        $result = vn__get_object_vars_recursive($object);
         return $isDoted ? Arr::dot($result) : $result;
     }
 }
 
-if (!function_exists('vana__get_object_vars_recursive')) {
+if (!function_exists('vn__get_object_vars_recursive')) {
     /**
      * @param object $object
      * @return array
      */
-    function vana__get_object_vars_recursive(object $object)
+    function vn__get_object_vars_recursive(object $object)
     {
         $result = [];
         $vars = get_object_vars($object);
         foreach ($vars as $var => $value) {
             if (is_object($value)) {
-                $result[$var] = vana__get_object_vars_recursive($value); // @TODO
+                $result[$var] = vn__get_object_vars_recursive($value); // @TODO
                 continue;
             }
 
@@ -269,7 +269,7 @@ if (!function_exists('vana__get_object_vars_recursive')) {
 
             foreach ($value as $_value) {
                 if (is_object($_value)) {
-                    $result[$var][] = vana__get_object_vars_recursive($_value); // @TODO
+                    $result[$var][] = vn__get_object_vars_recursive($_value); // @TODO
                 } else {
                     $result[$var] = $value;
                 }
