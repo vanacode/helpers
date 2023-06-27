@@ -1,0 +1,22 @@
+{
+    "name": "vanacode/vana-helpers",
+    "description": "helper methods for laravel",
+    "keywords": ["laravel", "helpers", "vanacode"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Davit Zeynalyan",
+            "email": "davitzeynalyan@laravel-helper.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": "8.*",
+        "laravel/framework": "9.*"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
